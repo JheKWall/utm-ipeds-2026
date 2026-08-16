@@ -1,0 +1,13 @@
+theme: jekyll-theme-cayman
+title: Student Completion Outcomes Near UT Martin
+description: >-
+  Completion, transfer-out, and cost across eight entering cohorts at five
+  institutions near UT Martin. Python, MySQL, Excel, Power BI.
+
+# Files that should never be served even if they reach the repo.
+exclude:
+  - secrets/
+  - data/raw/
+  - .pytest_cache/
+  - "**/__pycache__/"
+  - docs/superpowers/

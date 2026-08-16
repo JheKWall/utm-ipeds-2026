@@ -1,0 +1,1 @@
+The goal of this study is to determine which university in the vicinity of UT Martin has the greatest ratio of accepted students to students that fully complete their program, and to determine any factors that may affect that ratio.
