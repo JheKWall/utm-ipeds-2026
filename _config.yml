@@ -1,8 +1,8 @@
-theme: jekyll-theme-cayman
-title: Student Completion Outcomes Near UT Martin
-description: >-
-  Completion, transfer-out, and cost across eight entering cohorts at five
-  institutions near UT Martin. Python, MySQL, Excel, Power BI.
+remote_theme: pages-themes/midnight@v0.2.0
+plugins:
+- jekyll-remote-theme
+title: Student Completion Outcomes at UT Martin and Nearby Institutions (2026)
+description: A study of eight cohorts across five different institutions.
 
 # Files that should never be served even if they reach the repo.
 exclude:
