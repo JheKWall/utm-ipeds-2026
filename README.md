@@ -1,68 +1,60 @@
-# Student Completion Outcomes at Five Institutions Near UT Martin
+## Abstract
 
-What happens to entering first-time, full-time students at the University of Tennessee at Martin and
-four neighbouring institutions, how that has changed across eight entering cohorts, and whether local
-living expenses appear related to it.
-
-**Stack:** Python (pandas) · MySQL · Excel · Power BI
-**Data:** IPEDS Outcome Measures, Institutional Characteristics, and Directory files
+This analysis attempts to organize and visualize the outcome of eight cohorts across five different institutions, as well as attempting to correlate the completion rate of each cohort with the institution-reported living expenses. The data did not provide a meaningful correlation between the institution-reported living expenses and the completion rate of cohorts.
 
 ---
 
-## Research questions
+## Questions
 
-1. Among selected institutions near UT Martin, what share of entering first-time, full-time
-   freshmen complete their program — and is that changing?
-2. Is there a relationship between local living expenses and that completion rate?
+1. Among UT Martin and four nearby institutions, what is the outcome of entering first-time, full-time freshmen? How has it changed over time?
+2. Is there a relationship between the institution-reported living expenses and the completion rate?
 
 ## Institutions
 
 | Institution | UNITID | Sector | Location |
 |---|---|---|---|
-| The University of Tennessee-Martin | 221768 | 4-year public | Martin, TN |
-| Murray State University | 157401 | 4-year public | Murray, KY |
-| Dyersburg State Community College | 220057 | 2-year public | Dyersburg, TN |
-| Jackson State Community College | 220400 | 2-year public | Jackson, TN |
-| Arkansas Northeastern College | 107327 | 2-year public | Blytheville, AR |
-
-Three of the five are two-year colleges, which shapes the entire interpretation — see
-[Reading the sector difference](#reading-the-sector-difference).
+| The University of Tennessee-Martin (UTM) | 221768 | 4-year public | Martin, TN |
+| Murray State University (MSU) | 157401 | 4-year public | Murray, KY |
+| Dyersburg State Community College (DSCC) | 220057 | 2-year public | Dyersburg, TN |
+| Jackson State Community College (JSCC) | 220400 | 2-year public | Jackson, TN |
+| Arkansas Northeastern College (ANC) | 107327 | 2-year public | Blytheville, AR |
 
 ---
 
-## Question 1 — What share complete?
+## Question 1: Cohort Outcomes
 
-### The most recent cohort
+### The Oldest Cohort
 
-Students entering between **July 1, 2015 and June 30, 2016**, with status recorded **August 31,
-2023**, eight years later.
+The oldest cohort in the dataset enrolled between July 1, 2009 and June 30, 2010, with their status recorded August 31, 2017.
 
-| Institution | Cohort | Completed | Transferred out | Still enrolled | Outcome unknown | **Completed or transferred** |
-|---|---:|---:|---:|---:|---:|---:|
-| Murray State | 1,507 | **57.1%** | 12.6% | 0.5% | 29.8% | 69.7% |
-| UT Martin | 1,073 | 51.9% | **23.3%** | 0.5% | 24.3% | **75.2%** |
-| Arkansas Northeastern | 215 | 43.7% | 14.4% | 1.9% | 40.0% | 58.1% |
-| Dyersburg State | 587 | 31.2% | 17.4% | 0.9% | 50.6% | 48.6% |
-| Jackson State | 1,122 | 29.6% | 17.8% | 1.2% | 51.3% | 47.4% |
+| Institution | Cohort | Completed | Transferred out | Still enrolled | Outcome unknown |
+|---|---:|---:|---:|---:|---:|
+| Murray State | XXX | XXX | XXX | XXX | XXX |
+| UT Martin | XXX | XXX | XXX | XXX | XXX |
+| Arkansas Northeastern | XXX | XXX | XXX | XXX | XXX |
+| Dyersburg State | XXX | XXX | XXX | XXX | XXX |
+| Jackson State | XXX | XXX | XXX | XXX | XXX |
 
-![Eight-year outcomes](output/charts/1_outcomes.png)
+### The Latest Cohort
 
-**UT Martin has the highest transfer-out rate of the five, at 23.3%** — higher than any of the
-community colleges, contradicting the common assumption that community colleges are the transfer
-institutions. Because those students succeeded elsewhere rather than failing, UT Martin also has the
-**highest completion-or-transfer rate in the group at 75.2%**, ahead of Murray State despite Murray
-State's higher raw completion.
+Students entering between July 1, 2015 and June 30, 2016, with status recorded August 31,
+2023.
 
-**More than half of each large community college cohort has an unknown outcome** — 50.6% at Dyersburg
-State, 51.3% at Jackson State. These students earned no award and no subsequent enrollment was found
-anywhere. It is the starkest number here and the most easily misread: it is **not a dropout rate**.
+| Institution | Cohort | Completed | Transferred out | Still enrolled | Outcome unknown |
+|---|---:|---:|---:|---:|---:|
+| Murray State | 1,507 | 57.1% | 12.6% | 0.5% | 29.8% |
+| UT Martin | 1,073 | 51.9% | 23.3% | 0.5% | 24.3% |
+| Arkansas Northeastern | 215 | 43.7% | 14.4% | 1.9% | 40.0% |
+| Dyersburg State | 587 | 31.2% | 17.4% | 0.9% | 50.6% |
+| Jackson State | 1,122 | 29.6% | 17.8% | 1.2% | 51.3% |
 
-### The trend across eight cohorts
+### Overall Cohort Trend
 
-A single Outcome Measures file describes a single cohort, so answering "is this changing?" requires
-eight separate files — one per entering cohort, each measured at its own eight-year point.
+![Cohort Percentages from 2009-2017 per Institution](powerbi/screenshots/PowerBIAnalysis-pages-images-0.jpg)
 
-![Cohort trend](output/charts/5_cohort_trend.png)
+Each institution has seen a broad increase in completion rates per cohort since the 2009-10 cohort to the 2016-17 cohort. This increase is most evident with ANC, which saw an increase from 28.1% to 54.7% over the timeframe of the study.
+
+The remaining four-year and two-year institutions experienced around a ~10% growth in completion rates excluding UTM, which remained around ~50%.
 
 | Institution | 2009-10 | 2016-17 | Change |
 |---|---:|---:|---:|
@@ -72,201 +64,29 @@ eight separate files — one per entering cohort, each measured at its own eight
 | Murray State | 50.6% | 59.7% | +9.1 pts |
 | UT Martin | 46.9% | 52.4% | +5.5 pts |
 
-**Completion improved at every institution, and by far the most at the community colleges.**
-Arkansas Northeastern's rate nearly doubled; Dyersburg State's and Jackson State's rose by roughly
-two-thirds. The single-cohort snapshot above makes the community colleges look like they are
-failing. The trend shows them closing the gap rapidly — and the two universities improving far more
-slowly.
+![Cohort Percentages from 2009-2017 per Institution](powerbi/screenshots/PowerBIAnalysis-pages-images-2.jpg)
 
-That reversal of impression is the strongest argument in this project for never reading a single
-cohort as though it were a trend.
+The full outcome rate dataset shows that the two-year institutions trend towards higher unknown outcome rates, with the exception being ANC which achieved outcome rates similar to the four-year institutions for its latest 2016-17 cohort.
+
+The four-year institutions maintained a higher completion rate and transfer out rate than the two-year institutions over the timeframe of the study.
 
 ---
 
-## Question 2 — Do living expenses relate to completion?
+## Question 2: Cohort Relationship to Institution-reported Living Expenses
 
-**No conclusion is supportable, and the analysis produced three independent demonstrations of why.**
+The dataset shows an increase in the institution-reported living expenses as well as an increase in the completion rates for all cohorts. However, it does not fully support the conclusion that the institution-reported living expenses are correlated with cohort completion rate.
 
-Living expenses were assembled for fifteen academic years, 2009-10 to 2023-24, so every cohort can
-be paired with the costs it actually faced.
+The metric utilized in this study is not cost of living, but the institution-reported living expenses. The primary difference is that the institution-reported living expenses measure the average cost of housing, food, and other basic necessities excluding tuition.
 
-![Living expenses](output/charts/2_cost_of_living.png)
+The timespan of the institution-reported living expenses data ranges from 2009-10 (the entry of the first cohort) to 2023-2024 (the exit of the last cohort).
 
-### First: the cross-sectional correlation flips with an arbitrary choice
+Do note however that the UTM institution-reported living expenses data only starts at 2012-13. Additionally, the ANC data shows a large drop from the 2013-2014 academic year to the 2014-15 academic year ($18,575 to $10,524). This is believed to not be an actual reduction in the institution-reported living expenses, but rather a change in reporting methodology.
 
-Using the five institutions' 2015-16 completion rates:
+![Institution-reported Living Expenses from 2009-2024](powerbi/screenshots/PowerBIAnalysis-pages-images-1.jpg)
 
-| Cost year used | Correlation | Reads as |
-|---|---:|---|
-| **2015-16** — when the cohort enrolled | **−0.55** | Higher costs, lower completion |
-| **2023-24** — present day | **+0.82** | Higher costs, higher completion |
+The data here shows a general increase in the institution-reported living expenses, with a non-insignificant spike from the 2022-23 to 2023-24 academic year.
 
-![Completion and cost](output/charts/3_combined.png)
-
-Same institutions, same completion rates, opposite conclusions. The 2015-16 pairing is the
-conceptually correct one — those are the prices the cohort actually faced — but an analyst reaching
-for "the latest data" would get the reverse. The mechanism is visible directly: completion describes
-one cohort and has no time series, so each institution moves only sideways.
-
-![Cost shift](output/charts/4_cost_shift.png)
-
-Murray State's living expenses rose **65%**, travelling from cheapest in the group to most expensive
-and crossing every other institution. Because it also has the highest completion rate, moving it from
-one end of the axis to the other inverts the apparent relationship.
-
-### Second: within institutions, the sign disagrees between them
-
-Pairing all eight cohorts with the living expenses of their own entry year:
-
-| Institution | n | Cost at entry | Completion | r |
-|---|---:|---|---|---:|
-| Dyersburg State | 8 | $10,198 → $11,490 | 16.2% → 31.2% | **+0.90** |
-| Murray State | 8 | $9,244 → $12,135 | 50.0% → 59.7% | +0.63 |
-| UT Martin | 5 | $12,146 → $13,514 | 46.3% → 52.5% | +0.55 |
-| Jackson State | 8 | $14,910 → $15,688 | 16.6% → 29.6% | +0.31 |
-| Arkansas Northeastern | 8 | $10,524 → $18,575 | 26.8% → 54.7% | **−0.49** |
-
-Plotting each institution's movement through cost-completion space from its first cohort to its last
-shows where that variation comes from:
-
-![Trajectory](output/charts/7_trajectory.png)
-
-**Arkansas Northeastern appears to move left — but that is a reporting artifact, not a cost
-decline.** Its reported living expenses fall from $18,575 in 2013-14 to $10,524 in 2014-15, a **43%
-drop in a single year**, with both figures coming from the *same* source file. Local costs do not
-halve; the institution changed how it calculates the estimate. Its arrow spans that break.
-
-That single artifact is enough to flip the sign of the pooled correlation across all five
-institutions. It is not a finding about cost — it is a demonstration of how little five institutions
-can support, and of why a level break in a source series has to be found before the analysis is
-built on it rather than after.
-
-### Third: pooling the institutions reverses the sign — Simpson's paradox
-
-![Within institution](output/charts/6_within_institution.png)
-
-Pooled across all 37 institution-cohort observations, **r = −0.35** — negative, while four of the
-five within-institution correlations are positive. The aggregate contradicts nearly every subgroup.
-
-This is Simpson's paradox, and it is exactly what makes the naive analysis dangerous. The pooled
-negative correlation is driven by *between*-institution differences: Jackson State has both high
-costs and low completion, Murray State the reverse. The positive within-institution correlations are
-driven by *time*: over a decade, living expenses rose and completion rose, for reasons that have
-nothing to do with each other.
-
-**Neither figure is evidence that living expenses affect completion.** A positive within-institution
-correlation would imply that raising costs improves graduation, which is absurd. It is a spurious
-correlation between two variables that both trend upward.
-
-**No correlation coefficient, trend line, or p-value is reported as a finding anywhere in this
-project.** The coefficients above appear solely to demonstrate their own unreliability.
-
----
-
-## Reading the sector difference
-
-The intuition that shorter programs are easier to finish is reasonable and **wrong**.
-
-Mechanically the eight-year window *is* more generous to two-year colleges — 400% of normal time for
-an associate degree against 200% for a bachelor's. Despite that, community college completion runs at
-roughly half the four-year rate, nationally and here.
-
-The gap is driven by **student population and institutional mission, not program length.** Community
-colleges disproportionately serve lower-income, first-generation, and academically underprepared
-students, and many enrollees never intend to earn a credential from that institution at all.
-
-**Program length, student demographics, and institutional mission differ simultaneously across these
-five institutions and cannot be separated at this sample size.** Higher completion at the two
-universities is not evidence of institutional quality — particularly given that the community
-colleges are improving several times faster.
-
-**Completion-or-transfer** is therefore reported alongside completion. For a community college,
-transferring to a four-year institution is mission success, not failure.
-
----
-
-## Why Outcome Measures rather than graduation rates
-
-**Fixed windows make sectors comparable.** The Graduation Rates component measures completion at 150%
-of *normal* program time — three years for an associate degree, six for a bachelor's. Comparing those
-across sectors is meaningless. OM uses absolute 4-, 6-, and 8-year windows; NCES chose the eight-year
-point because it is at least 200% of normal time for every program type.
-
-**Full-year cohorts include spring and summer entrants.** GR is built on a fall cohort, so anyone
-first enrolling in January is invisible to it. OM covers a full 12-month entry period — which matters
-most at community colleges.
-
-**Only OM reports what happened to non-completers.** That breakdown exists **only** at the eight-year
-point; the four- and six-year points carry award counts alone.
-
-**Does the eight-year window inflate results?** No. Extending from six years to eight adds between
-0.4 and 2.3 percentage points, and under 2% of any cohort is still enrolled at year eight — confirming
-that eight years is a *measurement window*, not a typical enrollment duration.
-
-| Institution | 6-year | 8-year | Gain | Still enrolled at year 8 |
-|---|---:|---:|---:|---:|
-| Murray State | 55.4% | 57.1% | +1.7 | 0.5% |
-| UT Martin | 50.2% | 51.9% | +1.7 | 0.5% |
-| Arkansas Northeastern | 41.4% | 43.7% | +2.3 | 1.9% |
-| Dyersburg State | 30.2% | 31.2% | +1.0 | 0.9% |
-| Jackson State | 29.2% | 29.6% | +0.4 | 1.2% |
-
----
-
-## Method
-
-**Sources**, from `nces.ed.gov/ipeds/`:
-
-| File | Provides |
-|---|---|
-| `HD2025` | Institution directory — names, sector, county |
-| `OM2017`–`OM2024` | Outcome Measures, eight cohorts (2009-10 to 2016-17) |
-| `IC2012_AY`, `IC2016_AY`, `IC2019_AY`, `IC2023_AY` | Cost of attendance, 2009-10 to 2023-24 |
-
-`OM2015` and `OM2016` are excluded: pilot years of the component, structurally different (~13,000
-rows against ~50,000, no four-year status point) and missing `OMACHRT` entirely.
-
-**Pipeline.**
-
-```
-src/download.py  →  src/clean.py  →  src/load.py  →  src/analyze.py  →  src/viz.py
-                                         ↓                  ↓                ↓
-                                      MySQL          output/queries/    output/charts/
-```
-
-**Schema.** Three tables, both fact tables in long format so adding a year or cohort is a new row
-rather than a schema change:
-
-- `institution` — one row per institution
-- `om_cohort` — one row per institution per entering cohort (40 rows)
-- `ic_cost_year` — one row per institution per academic year (75 rows)
-
-**Measures.** Shares of the adjusted cohort (`OMACHRT`), first-time full-time cohort (`OMCHRT = 10`):
-
-| Measure | Definition |
-|---|---|
-| Completion rate | Received an award ÷ cohort |
-| Still-enrolled rate | No award, still enrolled at the reporting institution ÷ cohort |
-| Transfer-out rate | No award, subsequently enrolled elsewhere ÷ cohort |
-| Unknown-outcome rate | No award, no subsequent enrollment found ÷ cohort |
-| Completion-or-transfer rate | (Awarded + enrolled elsewhere) ÷ cohort |
-
-The four dispositions are mutually exclusive and must sum to the cohort. This is asserted in code
-rather than assumed — `src/rates.py` and `src/clean.py` both raise if they do not, guarding against a
-mis-mapped source variable across all 40 institution-cohort rows.
-
-**What the cost figures are.** Labelled *cost of attendance: living expenses*, using IPEDS's own
-terminology: an institution's **estimated student budget** for someone living off campus and not with
-family — food and housing plus other expenses. It **excludes tuition and fees**, recorded separately,
-because price of college and cost of living are different variables.
-
-It is an administrative estimate produced by a financial aid office, not a measurement of local
-prices. Institutions use differing methodologies and the figures cap federal aid eligibility.
-
-**On BEA Regional Price Parities.** An external price index was intended as corroboration, evaluated,
-and rejected. BEA's `SARPP` contains 52 geographies — the US, 50 states, DC — with no nonmetropolitan
-rows; `MARPP` contains exactly one nonmetropolitan geography, a single national figure. Only Jackson
-State falls within a BEA metro area; the other four would have shared one identical national value.
+If the cohort completion rate and institution-reported living expenses are measured together, it can be assumed that there is a non-insignificant relationship between cohort completion rate and institution-reported living expenses. However, due to the sample size of the study it cannot be stated for certain whether or not this is the case. This is compounded by the fact that the JSCC institution-reported living expenses data shows a consistent ~$10886 value, which suggests inaccuracies in the IPEDS dataset.
 
 ---
 
@@ -307,18 +127,13 @@ State falls within a BEA metro area; the other four would have shared one identi
 ## Repository
 
 ```
-data/processed/     cleaned CSVs — re-run the pipeline from load.py onward
+processed/          cleaned CSVs — re-run the pipeline from load.py onward
 sql/                schema.sql, analysis.sql (six queries)
 src/                download, clean, load, analyze, viz, excel_report
-tests/              unit tests for the rate calculations
-output/queries/     every query result as CSV — inspectable without a database
-output/charts/      the seven figures
-output/             UTM_IPEDS_Analysis.xlsx
 powerbi/            PowerBIAnalysis.pbix and PowerBIAnalysis.pdf (three-page dashboard)
-docs/               MySQL setup, SQL primer, pandas and Power BI walkthroughs
 ```
 
-**Reproducing.** Requires Python 3.14 and MySQL 8+. Create the database and a user with privileges on
+Reproduction requires Python 3.14 and MySQL 8+. Create the database and a user with privileges on
 it, put the password in `secrets/mysql_app_password.txt`, then:
 
 ```bash
