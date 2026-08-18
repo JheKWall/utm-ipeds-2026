@@ -1,6 +1,6 @@
 ## Abstract
 
-This analysis attempts to organize and visualize the outcome of eight cohorts across five different institutions, as well as attempting to correlate the completion rate of each cohort with the institution-reported living expenses. The data did not provide a meaningful correlation between the institution-reported living expenses and the completion rate of cohorts.
+This analysis attempts to organize and visualize the outcome of eight cohorts across five different institutions, as well as attempting to correlate the completion rate of each cohort with the institution-reported living expenses. The data cannot support a conclusion in either direction.
 
 ---
 
@@ -29,24 +29,23 @@ The oldest cohort in the dataset enrolled between July 1, 2009 and June 30, 2010
 
 | Institution | Cohort | Completed | Transferred out | Still enrolled | Outcome unknown |
 |---|---:|---:|---:|---:|---:|
-| Murray State | XXX | XXX | XXX | XXX | XXX |
-| UT Martin | XXX | XXX | XXX | XXX | XXX |
-| Arkansas Northeastern | XXX | XXX | XXX | XXX | XXX |
-| Dyersburg State | XXX | XXX | XXX | XXX | XXX |
-| Jackson State | XXX | XXX | XXX | XXX | XXX |
+| Murray State | 1,438 | 50.6% | 26.2% | 1.3% | 21.9% |
+| UT Martin | 1,424 | 46.9% | 34.3% | 0.8% | 18.0% |
+| Arkansas Northeastern | 449 | 28.1% | 32.7% | 3.1% | 36.1% |
+| Dyersburg State | 1,315 | 16.6% | 22.4% | 2.0% | 59.0% |
+| Jackson State | 917 | 16.2% | 22.6% | 1.2% | 60.0% |
 
 ### The Latest Cohort
 
-Students entering between July 1, 2015 and June 30, 2016, with status recorded August 31,
-2023.
+Students entering between July 1, 2016 and June 30, 2017, with status recorded August 31, 2024.
 
 | Institution | Cohort | Completed | Transferred out | Still enrolled | Outcome unknown |
 |---|---:|---:|---:|---:|---:|
-| Murray State | 1,507 | 57.1% | 12.6% | 0.5% | 29.8% |
-| UT Martin | 1,073 | 51.9% | 23.3% | 0.5% | 24.3% |
-| Arkansas Northeastern | 215 | 43.7% | 14.4% | 1.9% | 40.0% |
-| Dyersburg State | 587 | 31.2% | 17.4% | 0.9% | 50.6% |
-| Jackson State | 1,122 | 29.6% | 17.8% | 1.2% | 51.3% |
+| Murray State | 1,526 | 59.7% | 14.7% | 0.4% | 25.2% |
+| UT Martin | 966 | 52.4% | 23.1% | 0.4% | 24.1% |
+| Arkansas Northeastern | 232 | 54.7% | 28.9% | 0.9% | 15.5% |
+| Dyersburg State | 581 | 30.3% | 19.8% | 1.9% | 48.0% |
+| Jackson State | 1,106 | 27.9% | 20.4% | 1.6% | 50.0% |
 
 ### Overall Cohort Trend
 
@@ -86,41 +85,25 @@ Do note however that the UTM institution-reported living expenses data only star
 
 The data here shows a general increase in the institution-reported living expenses, with a non-insignificant spike from the 2022-23 to 2023-24 academic year.
 
-If the cohort completion rate and institution-reported living expenses are measured together, it can be assumed that there is a non-insignificant relationship between cohort completion rate and institution-reported living expenses. However, due to the sample size of the study it cannot be stated for certain whether or not this is the case. This is compounded by the fact that the JSCC institution-reported living expenses data shows a consistent ~$10886 value, which suggests inaccuracies in the IPEDS dataset.
+Despite the dataset showing a noticeable increase in both the completion rate and institution-reported living expenses, it cannot support a conclusion that there is a positive relationship between the two metrics. This is due to multiple factors:
+
+1. Pairing the completion rate and institution-reported living expenses requires an arbitrary choice or an average.
+   - Because a cohort's completion rate is a single value summarizing an eight-year span, it cannot be directly compared to the accompanying range of institution-reported living expenses which span the cohort's eight years.
+   - This forces us to arbitrarily choose a single institution-reported living expense within the cohort's range to represent it, or to take an average of all of the values to represent it.
+2. The dataset does not account for external factors affecting the metrics.
+   - The completion rate and institution-reported living expenses likely have multitudes of un-accounted factors affecting them such as advancements in teaching methods and/or inflation.
+3. The quality and quantity of the dataset is lacking.
+   - Assumed errors such as ANC's 2013-14 to 2014-15 drop in institution-reported living expenses and JSCC's near-flat living expenses across the entire timespan raise concerns about the quality of the dataset, while eight cohorts across only five institutions cannot be expected to provide substantial evidence of any correlation.
 
 ---
 
 ## Limitations
 
-1. **"Unknown outcome" is not a dropout rate.** It is a residual, and also absorbs students who
-   enrolled somewhere the National Student Clearinghouse does not cover.
-2. **The transfer-out / unknown split is unreliable year to year; only their sum is stable.** Across
-   the eight cohorts, Dyersburg State's transfer-out rate ranges over 38.7 points and its unknown
-   rate over 45.4 points, while the *sum* of the two ranges over only 14.8 points. Jackson State's
-   transfer-out swings from 22.4% to 5.6% and back to 23.5%. Student behaviour does not move like
-   that — Clearinghouse matching quality does. When matching improves, students move from "unknown"
-   into "enrolled elsewhere." Treat the boundary between those two categories as a data-quality
-   artifact and their sum as the real quantity.
-3. **Completion-or-transfer inherits that instability.** It is built on transfer-out, the unstable
-   component, and is least reliable at the community colleges it was introduced to treat fairly. It
-   remains worth reporting as a fuller picture of student success, but not as a precise figure.
-4. **No inferential claim about cost is supportable.** Three separate demonstrations above show why.
-5. **Dispositions, not motivations.** IPEDS records what happened, never why.
-6. **Mixed sectors are a confound**, not a bias with a known direction.
-7. **Simpson's paradox is present in the cost data.** Pooled and within-institution correlations have
-   opposite signs; neither is interpretable as an effect.
-8. **Within-institution correlations are spurious time trends.** Costs and completion both rose over
-   the decade for unrelated reasons.
-9. **Costs are self-reported and inconsistently maintained.** Jackson State reports a near-flat figure
-   across eleven years; Arkansas Northeastern's 2013-14 value falls 43% the following year and is a
-   suspected reporting error, flagged on the chart rather than removed.
-10. **UT Martin reported no living expenses for 2009-10 to 2011-12**, so three of its eight cohorts
-   cannot be paired with costs. A `LEFT JOIN` keeps those rows visible rather than silently dropping
-   them.
-11. **Cohorts are historical by construction.** The most recent completed cohort entered in 2016-17;
-   an eight-year window and recent students are mutually exclusive.
-12. **Cohort representativeness differs by sector.** First-time full-time students are under a third
-    of enrollment at two-year colleges but nearly half at four-year institutions.
+1. Completion rate and institution-reported living expenses are measured on incompatible timescales. The completion rate is a single value covering an eight-year window, while the living expenses are annual. Pairing them requires an arbitrary choice or an averaged value.
+2. Five institutions is not a sample. Institutions were selected for proximity to UTM, so no conclusion would've generalized to the state, sector, or nation.
+3. Institution-reported living expenses are self-reported estimates, not measured prices. Each institution's reporting office is likely to have differing methodologies in how they determine the living expenses.
+4. Two of the institution-reported living expense series are abnormal, while one starts late. ANC's figure falls from $18,575 to $10,524 between 2013-14 and 2014-15, JSCC's total rises only 4.7% across fifteen years, while UTM's living expenses only start get published in 2012-13.
+5. Cohort data is historical by nature. The latest cohort data is from the 2016-17 cohorts, which is distanced far from the latest cohorts today.
 
 ---
 
