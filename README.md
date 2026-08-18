@@ -85,7 +85,7 @@ Do note however that the UTM institution-reported living expenses data only star
 
 The data here shows a general increase in the institution-reported living expenses, with a non-insignificant spike from the 2022-23 to 2023-24 academic year.
 
-Despite the dataset showing a noticeable increase in both the completion rate and institution-reported living expenses, it cannot support a conclusion that there is a positive relationship between the two metrics. This is due to multiple factors:
+Despite the dataset showing a noticeable increase in both the completion rate and institution-reported living expenses, it cannot support a conclusion that there is a relationship in either direction between the two metrics. This is due to multiple factors:
 
 1. Pairing the completion rate and institution-reported living expenses requires an arbitrary choice or an average.
    - Because a cohort's completion rate is a single value summarizing an eight-year span, it cannot be directly compared to the accompanying range of institution-reported living expenses which span the cohort's eight years.
